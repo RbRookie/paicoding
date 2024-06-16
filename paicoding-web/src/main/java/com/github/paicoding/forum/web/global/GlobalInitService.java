@@ -9,6 +9,7 @@ import com.github.paicoding.forum.service.notify.service.NotifyService;
 import com.github.paicoding.forum.service.user.service.SessionService;
 import com.github.paicoding.forum.web.config.GlobalViewConfig;
 import com.github.paicoding.forum.web.global.vo.GlobalVo;
+import com.github.paicoding.forum.web.hook.interceptor.GlobalViewInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,6 +42,8 @@ public class GlobalInitService {
 
     @Resource
     private SeoInjectService seoInjectService;
+    @Autowired
+    private GlobalViewInterceptor globalViewInterceptor;
 
     /**
      * 全局属性配置
